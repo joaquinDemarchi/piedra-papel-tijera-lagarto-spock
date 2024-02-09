@@ -113,9 +113,15 @@ document.getElementById('gameForm').addEventListener('submit', function(event) {
     detalle = '"Piedra aplasta a lagarto"'
   }
   
-
-
   document.getElementById('resultado').innerText = 'Sheldon ha elegido \n '+ maquina[eleccionMaquina]  +' \n'+ detalle +' \n'+ resultadoTexto;
+
+  // Reproducir sonido correspondiente
+  if (resultadoTexto === mensajeGanador) {
+    document.getElementById('winSound').play();
+  } else if (resultadoTexto === mensajePerdedor) {
+    document.getElementById('loseSound').play();
+  }
+
 });
 
 console.log('jdks');
